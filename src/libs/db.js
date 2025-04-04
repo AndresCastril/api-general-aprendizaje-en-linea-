@@ -18,3 +18,5 @@ export const validateConnection = () => {
   .then(() => console.log('Connection success!'))
   .catch((error) => console.error('Error connection', error))
 }
+
+

@@ -3,7 +3,7 @@ import { pool } from "../libs/db.js";
 import { errorHandler } from "../helpers/errorHandler.js";
 
 export const getAll = (req, res) => {
-  pool.query('select * from products')
+  pool.query('select * from estudiantes')
   .then((data) => {
     const info = data[0]
     res.json({
@@ -13,13 +13,13 @@ export const getAll = (req, res) => {
     })
   })
   .catch(error => {
-    errorHandler(res, 404, "Error al obtener la informacion de los productos", error)
+    errorHandler(res, 404, "Error al obtener la informacion de los estudiantes", error)
   })
 }
 
-export const getProductById = (req, res) => {
-  const { idProduct } = req.params
-  pool.query(`select * from products where id_product = ${idProduct}`)
+export const getEstudianteById = (req, res) => {
+  const { idEstudiante } = req.params
+  pool.query(`select * from estudiantes where id_estudiante = ${idEstudiante}`)
   .then((data) => {
     const info = data[0]
     res.json({
@@ -29,6 +29,6 @@ export const getProductById = (req, res) => {
     })
   })
   .catch(error => {
-    errorHandler(res, 404, "Error al obtener la informacion de los productos", error)
+    errorHandler(res, 404, "Error al obtener la informacion de los estudiantes", error)
   })
 }

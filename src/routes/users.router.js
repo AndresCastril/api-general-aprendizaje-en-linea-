@@ -9,3 +9,4 @@ router.post("/create", createUser);
 router.post("/", verifyUser);
 
 export default router;
+
